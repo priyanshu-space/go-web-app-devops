@@ -43,6 +43,10 @@ jobs:
       uses: golangci/golangci-lint-action@v6
       with:
         version: v1.56.2
+        install-mode: binary
+      # Place working-directory here
+      run: ./golangci-lint run  # Run golangci-lint from the working directory
+      working-directory: ./go-web-app  # Correct placement of working-directory
   
   push:
     runs-on: ubuntu-latest
